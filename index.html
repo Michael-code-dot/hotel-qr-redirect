@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Hotel Menu...</title>
+    <script>
+        // =============================================================
+        // CHANGE ONLY THIS URL BELOW TO YOUR REAL RENDER APPLICATION URL:
+        // =============================================================
+        const backendUrl = "https://magic-mandi-menu.onrender.com"; 
+        // =============================================================
+
+        // Grab table number from URL (e.g., ?table=5)
+        const urlParams = new URLSearchParams(window.location.search);
+        const table = urlParams.get('table');
+        
+        // Build destination link
+        const targetUrl = table ? `${backendUrl}/?table=${table}` : backendUrl;
+
+        // Instantly forward guest to your menu
+        window.location.replace(targetUrl);
+    </script>
+</head>
+<body style="font-family: system-ui, -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9;">
+    <p style="color: #666; font-size: 1.2rem;">Loading menu...</p>
+</body>
+</html>
